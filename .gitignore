@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.env*/
+*.venv
+
+# Model files
+*.pt
+*.onnx
+*.engine
+
+# Image cache or upload folders
+image/
+uploads/
+temp/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Python cache
+*.pickle
+*.pkl
+
+# Environment
+.env.local
+*.ini
+
+# IDE
+.idea/
+*.iml
