@@ -12,11 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1798, 842)
+        MainWindow.resize(1176, 842)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(10, -40, 1751, 900))
+        self.frame.setGeometry(QtCore.QRect(10, -40, 1441, 900))
         self.frame.setStyleSheet("#frame {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,\n"
 "                                      stop:0 #0f172a, stop:1 #1e293b);\n"
@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.frHeader = QtWidgets.QFrame(parent=self.frame)
-        self.frHeader.setGeometry(QtCore.QRect(0, 40, 1051, 91))
+        self.frHeader.setGeometry(QtCore.QRect(0, 40, 1131, 91))
         self.frHeader.setStyleSheet("#frHeader {\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,\n"
 "                                      stop:0 #0f172a, stop:1 #1e293b);\n"
@@ -62,7 +62,7 @@ class Ui_MainWindow(object):
         self.lblTitle.setObjectName("lblTitle")
         self.verticalLayout_3.addWidget(self.lblTitle)
         self.frEntryCheck = QtWidgets.QFrame(parent=self.frame)
-        self.frEntryCheck.setGeometry(QtCore.QRect(730, 140, 311, 601))
+        self.frEntryCheck.setGeometry(QtCore.QRect(790, 140, 341, 591))
         self.frEntryCheck.setStyleSheet("/* --- Frame / GroupBox Entry Check --- */\n"
 "QFrame#frEntryCheck {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,\n"
@@ -155,16 +155,12 @@ class Ui_MainWindow(object):
         self.frEntryCheck.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frEntryCheck.setObjectName("frEntryCheck")
         self.formLayoutWidget = QtWidgets.QWidget(parent=self.frEntryCheck)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(10, 137, 281, 181))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(30, 120, 281, 182))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setVerticalSpacing(10)
         self.formLayout.setObjectName("formLayout")
-        self.lineEditName = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
-        self.lineEditName.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.lineEditName.setObjectName("lineEditName")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEditName)
         self.lblPlate = QtWidgets.QLabel(parent=self.formLayoutWidget)
         self.lblPlate.setObjectName("lblPlate")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lblPlate)
@@ -189,19 +185,23 @@ class Ui_MainWindow(object):
         self.lblName = QtWidgets.QLabel(parent=self.formLayoutWidget)
         self.lblName.setObjectName("lblName")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lblName)
+        self.lineEditName = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
+        self.lineEditName.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lineEditName.setObjectName("lineEditName")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEditName)
         self.time = QtWidgets.QLineEdit(parent=self.frEntryCheck)
-        self.time.setGeometry(QtCore.QRect(10, 80, 281, 31))
+        self.time.setGeometry(QtCore.QRect(30, 80, 281, 31))
         self.time.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.time.setObjectName("time")
         self.lblTime = QtWidgets.QLabel(parent=self.frEntryCheck)
-        self.lblTime.setGeometry(QtCore.QRect(10, 40, 71, 31))
+        self.lblTime.setGeometry(QtCore.QRect(30, 40, 71, 31))
         self.lblTime.setObjectName("lblTime")
         self.lblKetQua = QtWidgets.QLabel(parent=self.frEntryCheck)
         self.lblKetQua.setGeometry(QtCore.QRect(130, 10, 91, 31))
         self.lblKetQua.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblKetQua.setObjectName("lblKetQua")
         self.layoutWidget1 = QtWidgets.QWidget(parent=self.frEntryCheck)
-        self.layoutWidget1.setGeometry(QtCore.QRect(10, 480, 281, 58))
+        self.layoutWidget1.setGeometry(QtCore.QRect(30, 480, 271, 58))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -213,17 +213,17 @@ class Ui_MainWindow(object):
         self.btnRa.setObjectName("btnRa")
         self.horizontalLayout_4.addWidget(self.btnRa)
         self.lineEditCheck = QtWidgets.QLineEdit(parent=self.frEntryCheck)
-        self.lineEditCheck.setGeometry(QtCore.QRect(10, 400, 281, 51))
+        self.lineEditCheck.setGeometry(QtCore.QRect(30, 400, 281, 51))
         self.lineEditCheck.setObjectName("lineEditCheck")
         self.btnKiemTra = QtWidgets.QPushButton(parent=self.frEntryCheck)
-        self.btnKiemTra.setGeometry(QtCore.QRect(200, 330, 93, 51))
+        self.btnKiemTra.setGeometry(QtCore.QRect(220, 330, 93, 51))
         self.btnKiemTra.setObjectName("btnKiemTra")
         self.lineEditPlate_2 = QtWidgets.QLineEdit(parent=self.frEntryCheck)
-        self.lineEditPlate_2.setGeometry(QtCore.QRect(10, 330, 181, 51))
+        self.lineEditPlate_2.setGeometry(QtCore.QRect(30, 330, 181, 51))
         self.lineEditPlate_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEditPlate_2.setObjectName("lineEditPlate_2")
         self.frame_2 = QtWidgets.QFrame(parent=self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(0, 140, 721, 601))
+        self.frame_2.setGeometry(QtCore.QRect(20, 140, 761, 591))
         self.frame_2.setStyleSheet("#frame_2 {\n"
 "    border: 1px solid #374151; /* slate-700 */\n"
 "    border-radius: 10px;             /* bo góc 8px */\n"
@@ -237,13 +237,7 @@ class Ui_MainWindow(object):
 "    padding: 10px;\n"
 "    border-radius: 8px;\n"
 "}\n"
-"QPushButton#btnConfirm {\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;\n"
-"    border-radius: 8px;\n"
-"}\n"
+"\n"
 "/* --- Hover --- */\n"
 "QPushButton#btnScan:hover {\n"
 "    background-color: #059669;\n"
@@ -260,7 +254,7 @@ class Ui_MainWindow(object):
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
         self.frCamera = QtWidgets.QFrame(parent=self.frame_2)
-        self.frCamera.setGeometry(QtCore.QRect(0, 60, 721, 436))
+        self.frCamera.setGeometry(QtCore.QRect(10, 20, 741, 501))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -270,8 +264,10 @@ class Ui_MainWindow(object):
         self.frCamera.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frCamera.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frCamera.setObjectName("frCamera")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.frCamera)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
         self.FrameFace = QtWidgets.QFrame(parent=self.frCamera)
-        self.FrameFace.setGeometry(QtCore.QRect(0, 10, 351, 451))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -279,6 +275,7 @@ class Ui_MainWindow(object):
         self.FrameFace.setSizePolicy(sizePolicy)
         self.FrameFace.setStyleSheet("QFrame#FrameFace {\n"
 "\n"
+"     border-radius: 8px; \n"
 "}\n"
 "#lblFaceImage {\n"
 "    margin: 25px;\n"
@@ -295,7 +292,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#lbltitle {\n"
-"    color: black;\n"
+"    color: white;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    margin-left: 8px;\n"
@@ -310,13 +307,11 @@ class Ui_MainWindow(object):
         self.FrameFace.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.FrameFace.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.FrameFace.setObjectName("FrameFace")
-        self.widget = QtWidgets.QWidget(parent=self.FrameFace)
-        self.widget.setGeometry(QtCore.QRect(10, 13, 342, 391))
-        self.widget.setObjectName("widget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.FrameFace)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.lbltitle = QtWidgets.QLabel(parent=self.widget)
+        self.lbltitle = QtWidgets.QLabel(parent=self.FrameFace)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -325,20 +320,20 @@ class Ui_MainWindow(object):
         self.lbltitle.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.lbltitle.setObjectName("lbltitle")
         self.verticalLayout.addWidget(self.lbltitle)
-        self.lblCamera = QtWidgets.QLabel(parent=self.widget)
+        self.lblCamera = QtWidgets.QLabel(parent=self.FrameFace)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lblCamera.sizePolicy().hasHeightForWidth())
         self.lblCamera.setSizePolicy(sizePolicy)
-        self.lblCamera.setMinimumSize(QtCore.QSize(340, 200))
-        self.lblCamera.setMaximumSize(QtCore.QSize(340, 200))
+        self.lblCamera.setMinimumSize(QtCore.QSize(350, 200))
+        self.lblCamera.setMaximumSize(QtCore.QSize(350, 200))
         self.lblCamera.setStyleSheet("")
         self.lblCamera.setText("")
         self.lblCamera.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblCamera.setObjectName("lblCamera")
         self.verticalLayout.addWidget(self.lblCamera)
-        self.lblFaceImage = QtWidgets.QLabel(parent=self.widget)
+        self.lblFaceImage = QtWidgets.QLabel(parent=self.FrameFace)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -349,8 +344,9 @@ class Ui_MainWindow(object):
         self.lblFaceImage.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblFaceImage.setObjectName("lblFaceImage")
         self.verticalLayout.addWidget(self.lblFaceImage)
+        self.horizontalLayout_2.addLayout(self.verticalLayout)
+        self.horizontalLayout.addWidget(self.FrameFace)
         self.FramePlate = QtWidgets.QFrame(parent=self.frCamera)
-        self.FramePlate.setGeometry(QtCore.QRect(369, 12, 350, 451))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -367,7 +363,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#lbltitle_2 {\n"
-"    color: black;\n"
+"    color: white;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    margin-left: 8px;\n"
@@ -410,13 +406,11 @@ class Ui_MainWindow(object):
         self.FramePlate.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.FramePlate.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.FramePlate.setObjectName("FramePlate")
-        self.widget1 = QtWidgets.QWidget(parent=self.FramePlate)
-        self.widget1.setGeometry(QtCore.QRect(0, 11, 342, 388))
-        self.widget1.setObjectName("widget1")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget1)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.FramePlate)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.lbltitle_2 = QtWidgets.QLabel(parent=self.widget1)
+        self.lbltitle_2 = QtWidgets.QLabel(parent=self.FramePlate)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -424,20 +418,20 @@ class Ui_MainWindow(object):
         self.lbltitle_2.setSizePolicy(sizePolicy)
         self.lbltitle_2.setObjectName("lbltitle_2")
         self.verticalLayout_2.addWidget(self.lbltitle_2)
-        self.lblCamera_2 = QtWidgets.QLabel(parent=self.widget1)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
+        self.lblCamera_2 = QtWidgets.QLabel(parent=self.FramePlate)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lblCamera_2.sizePolicy().hasHeightForWidth())
         self.lblCamera_2.setSizePolicy(sizePolicy)
-        self.lblCamera_2.setMinimumSize(QtCore.QSize(340, 200))
-        self.lblCamera_2.setMaximumSize(QtCore.QSize(340, 200))
+        self.lblCamera_2.setMinimumSize(QtCore.QSize(350, 200))
+        self.lblCamera_2.setMaximumSize(QtCore.QSize(350, 200))
         self.lblCamera_2.setStyleSheet("")
         self.lblCamera_2.setText("")
         self.lblCamera_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblCamera_2.setObjectName("lblCamera_2")
         self.verticalLayout_2.addWidget(self.lblCamera_2)
-        self.lblPlateImage = QtWidgets.QLabel(parent=self.widget1)
+        self.lblPlateImage = QtWidgets.QLabel(parent=self.FramePlate)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -449,6 +443,8 @@ class Ui_MainWindow(object):
         self.lblPlateImage.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblPlateImage.setObjectName("lblPlateImage")
         self.verticalLayout_2.addWidget(self.lblPlateImage)
+        self.horizontalLayout_3.addLayout(self.verticalLayout_2)
+        self.horizontalLayout.addWidget(self.FramePlate)
         self.btnScan = QtWidgets.QPushButton(parent=self.frame_2)
         self.btnScan.setGeometry(QtCore.QRect(270, 540, 81, 41))
         self.btnScan.setStyleSheet("btnScan {\n"
@@ -499,207 +495,9 @@ class Ui_MainWindow(object):
 "    border: none;\n"
 "}")
         self.btnConfirm.setObjectName("btnConfirm")
-        self.DangKy = QtWidgets.QFrame(parent=self.frame)
-        self.DangKy.setGeometry(QtCore.QRect(1050, 40, 471, 791))
-        self.DangKy.setStyleSheet("QFrame#DangKy{\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,\n"
-"                                      stop:0 #0f172a, stop:1 #1e293b);\n"
-"    border: 1px solid #374151; /* slate-700 */\n"
-"        border-radius: 8px; \n"
-"}\n"
-"#lblDangKy , #lblHistory{\n"
-"    font-size: 20px;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"QLineEdit#editEmail, QLineEdit,#editFullName, #editSdt{\n"
-"    background-color: #374151; /* slate-700 */\n"
-"    color: white;\n"
-"    padding: 6px 10px;\n"
-"    border: 1px solid #4b5563; /* slate-600 */\n"
-"    border-radius: 6px;\n"
-"    font-size: 13px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"QLabel#lblEmail, #lblSdt, #lblFullName{\n"
-"    color: #d1d5db; /* slate-300 */\n"
-"    font-weight: bold;\n"
-"    font-size: 13px;\n"
-"}\n"
-"\n"
-"#btnSearch{\n"
-"background-color: #1B9CFC;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;\n"
-"    border-radius: 8px;\n"
-"\n"
-"}\n"
-"#btnThem {\n"
-"    background-color: #1B9CFC;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;\n"
-"    border-radius: 8px;\n"
-"\n"
-"}\n"
-"#btnSua{\n"
-"    background-color: #f9ca24;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;\n"
-"    border-radius: 8px;\n"
-"} \n"
-"#btnXoa{\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"    padding: 10px;\n"
-"    border-radius: 8px;\n"
-"}\n"
-" #btnXacNhanDangKy{\n"
-"    background-color: green; /* slate-700 */\n"
-"    color: white;\n"
-"    padding: 6px 10px;\n"
-"    border: 1px solid #4b5563; /* slate-600 */\n"
-"    border-radius: 6px;\n"
-"    font-size: 13px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"")
-        self.DangKy.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.DangKy.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.DangKy.setObjectName("DangKy")
-        self.lblDangKy = QtWidgets.QLabel(parent=self.DangKy)
-        self.lblDangKy.setGeometry(QtCore.QRect(40, 20, 311, 31))
-        self.lblDangKy.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.lblDangKy.setObjectName("lblDangKy")
-        self.formLayoutWidget_3 = QtWidgets.QWidget(parent=self.DangKy)
-        self.formLayoutWidget_3.setGeometry(QtCore.QRect(10, 160, 371, 121))
-        self.formLayoutWidget_3.setObjectName("formLayoutWidget_3")
-        self.formLayout_3 = QtWidgets.QFormLayout(self.formLayoutWidget_3)
-        self.formLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.formLayout_3.setObjectName("formLayout_3")
-        self.lblFullName = QtWidgets.QLabel(parent=self.formLayoutWidget_3)
-        self.lblFullName.setObjectName("lblFullName")
-        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lblFullName)
-        self.editFullName = QtWidgets.QLineEdit(parent=self.formLayoutWidget_3)
-        self.editFullName.setObjectName("editFullName")
-        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.editFullName)
-        self.lblEmail = QtWidgets.QLabel(parent=self.formLayoutWidget_3)
-        self.lblEmail.setObjectName("lblEmail")
-        self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lblEmail)
-        self.editEmail = QtWidgets.QLineEdit(parent=self.formLayoutWidget_3)
-        self.editEmail.setObjectName("editEmail")
-        self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.editEmail)
-        self.lblSdt = QtWidgets.QLabel(parent=self.formLayoutWidget_3)
-        self.lblSdt.setObjectName("lblSdt")
-        self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lblSdt)
-        self.editSdt = QtWidgets.QLineEdit(parent=self.formLayoutWidget_3)
-        self.editSdt.setObjectName("editSdt")
-        self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.editSdt)
-        self.lblHistory = QtWidgets.QLabel(parent=self.DangKy)
-        self.lblHistory.setGeometry(QtCore.QRect(40, 400, 311, 61))
-        self.lblHistory.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.lblHistory.setObjectName("lblHistory")
-        self.tableWidget = QtWidgets.QTableWidget(parent=self.DangKy)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 480, 431, 271))
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(4)
-        self.tableWidget.setRowCount(11)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(5, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(7, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(8, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(9, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(10, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(0, 170, 255))
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.NoBrush)
-        item.setForeground(brush)
-        self.tableWidget.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(0, 170, 255))
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.NoBrush)
-        item.setForeground(brush)
-        self.tableWidget.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(0, 170, 255))
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.NoBrush)
-        item.setForeground(brush)
-        self.tableWidget.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(0, 170, 255))
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.NoBrush)
-        item.setForeground(brush)
-        self.tableWidget.setHorizontalHeaderItem(3, item)
-        self.btnXacNhanDangKy = QtWidgets.QPushButton(parent=self.DangKy)
-        self.btnXacNhanDangKy.setGeometry(QtCore.QRect(120, 310, 161, 41))
-        self.btnXacNhanDangKy.setStyleSheet("")
-        self.btnXacNhanDangKy.setObjectName("btnXacNhanDangKy")
-        self.btnSearch = QtWidgets.QPushButton(parent=self.DangKy)
-        self.btnSearch.setGeometry(QtCore.QRect(140, 100, 121, 41))
-        self.btnSearch.setStyleSheet("")
-        self.btnSearch.setObjectName("btnSearch")
-        self.layoutWidget2 = QtWidgets.QWidget(parent=self.DangKy)
-        self.layoutWidget2.setGeometry(QtCore.QRect(390, 160, 61, 124))
-        self.layoutWidget2.setObjectName("layoutWidget2")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget2)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.btnThem = QtWidgets.QPushButton(parent=self.layoutWidget2)
-        self.btnThem.setStyleSheet("")
-        self.btnThem.setObjectName("btnThem")
-        self.verticalLayout_4.addWidget(self.btnThem)
-        self.btnSua = QtWidgets.QPushButton(parent=self.layoutWidget2)
-        self.btnSua.setStyleSheet("")
-        self.btnSua.setObjectName("btnSua")
-        self.verticalLayout_4.addWidget(self.btnSua)
-        self.btnXoa = QtWidgets.QPushButton(parent=self.layoutWidget2)
-        self.btnXoa.setStyleSheet("")
-        self.btnXoa.setObjectName("btnXoa")
-        self.verticalLayout_4.addWidget(self.btnXoa)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1798, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1176, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -726,44 +524,6 @@ class Ui_MainWindow(object):
         self.lbltitle_2.setText(_translate("MainWindow", "BIỂN SỐ"))
         self.btnScan.setText(_translate("MainWindow", "CHỤP"))
         self.btnConfirm.setText(_translate("MainWindow", "XÁC NHẬN"))
-        self.lblDangKy.setText(_translate("MainWindow", "QUẢN LÝ NGƯỜI DÙNG"))
-        self.lblFullName.setText(_translate("MainWindow", "HỌ TÊN"))
-        self.lblEmail.setText(_translate("MainWindow", "EMAIL"))
-        self.lblSdt.setText(_translate("MainWindow", "SỐ ĐIỆN THOẠI"))
-        self.lblHistory.setText(_translate("MainWindow", "LỊCH SỬ VÀO RA"))
-        item = self.tableWidget.verticalHeaderItem(1)
-        item.setText(_translate("MainWindow", "1"))
-        item = self.tableWidget.verticalHeaderItem(2)
-        item.setText(_translate("MainWindow", "2"))
-        item = self.tableWidget.verticalHeaderItem(3)
-        item.setText(_translate("MainWindow", "3"))
-        item = self.tableWidget.verticalHeaderItem(4)
-        item.setText(_translate("MainWindow", "4"))
-        item = self.tableWidget.verticalHeaderItem(5)
-        item.setText(_translate("MainWindow", "5"))
-        item = self.tableWidget.verticalHeaderItem(6)
-        item.setText(_translate("MainWindow", "6"))
-        item = self.tableWidget.verticalHeaderItem(7)
-        item.setText(_translate("MainWindow", "7"))
-        item = self.tableWidget.verticalHeaderItem(8)
-        item.setText(_translate("MainWindow", "8"))
-        item = self.tableWidget.verticalHeaderItem(9)
-        item.setText(_translate("MainWindow", "9"))
-        item = self.tableWidget.verticalHeaderItem(10)
-        item.setText(_translate("MainWindow", "10"))
-        item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "ID"))
-        item = self.tableWidget.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "BIỂN SỐ "))
-        item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "THỜI GIAN VÀO"))
-        item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "SỐ LƯỢT ĐẬU"))
-        self.btnXacNhanDangKy.setText(_translate("MainWindow", "XÁC NHẬN ĐĂNG KÝ"))
-        self.btnSearch.setText(_translate("MainWindow", "TÌM KIẾM"))
-        self.btnThem.setText(_translate("MainWindow", "THÊM"))
-        self.btnSua.setText(_translate("MainWindow", "SỬA"))
-        self.btnXoa.setText(_translate("MainWindow", "XÓA"))
 
 
 if __name__ == "__main__":

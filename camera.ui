@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1798</width>
+    <height>842</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-40</y>
+      <width>1751</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #0f172a, stop:1 #1e293b);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frHeader">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>1051</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#frHeader {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #0f172a, stop:1 #1e293b);
+ padding : 8px
+}
+
+#lblTitle {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#btnCamera{
+    color: white;
+    font-size: 14px;
+	background-color: #27ae60;
+	border-radius: 5px;
+   font-weight: bold;
+	padding: 10px;
+	margin-left: 50%;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>347</x>
+        <y>10</y>
+        <width>231</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="lblTitle">
+         <property name="text">
+          <string>QUẢN LÝ RA VÀO </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frEntryCheck">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>140</y>
+       <width>311</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* --- Frame / GroupBox Entry Check --- */
+QFrame#frEntryCheck {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #0f172a, stop:1 #1e293b);
+    border: 1px solid #374151; /* slate-700 */
+  	  border-radius: 8px; 
+}
+
+/* --- Title QLabel --- */
+QLabel#lblKiemTra {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    qproperty-alignment: 'AlignHCenter';
+}
+
+
+/* --- Form Labels --- */
+QLabel#lblName, QLabel#lblPlate, #lblCount, #lblRecently, #lblTime{
+    color: #d1d5db; /* slate-300 */
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* --- QLineEdit --- */
+QLineEdit#lineEditName, QLineEdit#lineEditPlate, #lineEditCount, #lineEditRecently, #time, #lineEditCheck, #lineEditPlate_2{
+    background-color: #374151; /* slate-700 */
+    color: white;
+    padding: 6px 10px;
+    border: 1px solid #4b5563; /* slate-600 */
+    border-radius: 6px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+QLineEdit#lineEditName:focus, QLineEdit#lineEditPlate:focus {
+    border: 1px solid #3b82f6; /* blue-500 */
+    outline: none;
+}
+
+/* --- QPushButton cơ bản --- */
+QPushButton#btnVao,
+QPushButton#btnRa 
+{
+    background-color: red; /* emerald-600 */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+margin : 10px;
+}
+
+QPushButton#btnKiemTra {
+    background-color: green; /* emerald-600 */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* --- Hover --- */
+QPushButton#btnVao:hover,
+QPushButton#btnRa:hover {
+    background-color: #059669; /* emerald-700 */
+}
+
+QLabel#lblKiemTra{
+	 color: #d1d5db; /* slate-300 */
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* --- Disabled --- */
+QPushButton#btnVao:disabled,
+QPushButton#btnRa:disabled {
+    background-color: #6b7280; /* slate-600 */
+    color: #d1d5db; /* slate-300 */
+    border: none;
+}
+
+
+
+
+#lblKetQua{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>137</y>
+        <width>281</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="verticalSpacing">
+        <number>10</number>
+       </property>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditName">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblPlate">
+         <property name="text">
+          <string>BIỂN SỐ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditPlate">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lblRecently">
+         <property name="text">
+          <string>GẦN ĐÂY</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEditRecently">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblCount">
+         <property name="text">
+          <string>SỐ LẦN ĐẬU</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEditCount">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblName">
+         <property name="text">
+          <string>TÊN</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLineEdit" name="time">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>281</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTime">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>THỜI GIAN</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblKetQua">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>KẾT QUẢ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>281</width>
+        <height>58</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QPushButton" name="btnVao">
+         <property name="text">
+          <string>VÀO</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRa">
+         <property name="text">
+          <string>RA</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLineEdit" name="lineEditCheck">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>400</y>
+        <width>281</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnKiemTra">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>330</y>
+        <width>93</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>KIỂM TRA</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditPlate_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>721</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#frame_2 {
+    border: 1px solid #374151; /* slate-700 */
+    border-radius: 10px;             /* bo góc 8px */
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #0f172a, stop:1 #1e293b);
+}
+QPushButton#btnScan, #btnConfirm {
+    background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+}
+QPushButton#btnConfirm {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+}
+/* --- Hover --- */
+QPushButton#btnScan:hover {
+    background-color: #059669;
+}
+
+/* --- Disabled --- */
+QPushButton#btnScan:disabled {
+    background-color: #6b7280;
+    color: #d1d5db;
+    border: none;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QFrame" name="frCamera">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>721</width>
+        <height>436</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="FrameFace">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>351</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame#FrameFace {
+
+}
+#lblFaceImage {
+	margin: 25px;
+	display: flex;
+    justify-content: center;   /* Căn giữa ngang */
+    align-items: center;    
+    border: 1px solid #374151; /* slate-700 */
+}
+
+
+#lblCamera {
+     border: 1px solid #374151; /* slate-700 */
+   
+}
+
+#lbltitle {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+#lblNameResult {
+	font-size: 18px;
+	font-weight: bold;
+    border: 1px solid #374151; /* slate-700 */
+	padding: 5px;
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>13</y>
+          <width>342</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="lbltitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>KHUÔN MẶT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignHCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblCamera">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>340</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>340</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblFaceImage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="FramePlate">
+       <property name="geometry">
+        <rect>
+         <x>369</x>
+         <y>12</y>
+         <width>350</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame#FramePlate {
+
+
+}
+
+#lblCamera_2 {
+    
+     border: 1px solid #374151; /* slate-700 */
+}
+
+#lbltitle_2 {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+#lblPlateResult{
+	font-size: 18px;
+	font-weight: bold;
+    border: 1px solid #374151; /* slate-700 */
+	padding: 5px;
+}
+#lblPlateImage{
+	margin: 25px;
+display: flex;
+    justify-content: center;   /* Căn giữa ngang */
+    align-items: center;    
+	    border: 1px solid #374151; /* slate-700 */
+}
+
+QPushButton#btnScanPlate {
+    background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+/* --- Hover --- */
+QPushButton#btnScanPlate:hover
+ {
+    background-color: #059669; /* emerald-700 */
+}
+
+/* --- Disabled --- */
+QPushButton#btnScanPlate:disabled {
+    background-color: #6b7280; /* slate-600 */
+    color: #d1d5db; /* slate-300 */
+    border: none;
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>11</y>
+          <width>342</width>
+          <height>388</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="lbltitle_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>BIỂN SỐ</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblCamera_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>340</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>340</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblPlateImage">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="btnScan">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>540</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">btnScan {
+    background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+/* --- Hover --- */
+btnScan:hover
+{
+    background-color: #059669; /* emerald-700 */
+}
+
+/* --- Disabled --- */
+btnScan:disabled
+{
+    background-color: #6b7280; /* slate-600 */
+    color: #d1d5db; /* slate-300 */
+    border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>CHỤP</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfirm">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>540</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">btnScan {
+    background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+/* --- Hover --- */
+btnScan:hover
+{
+    background-color: #059669; /* emerald-700 */
+}
+
+/* --- Disabled --- */
+btnScan:disabled
+{
+    background-color: #6b7280; /* slate-600 */
+    color: #d1d5db; /* slate-300 */
+    border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>XÁC NHẬN</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="DangKy">
+     <property name="geometry">
+      <rect>
+       <x>1050</x>
+       <y>40</y>
+       <width>471</width>
+       <height>791</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#DangKy{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #0f172a, stop:1 #1e293b);
+    border: 1px solid #374151; /* slate-700 */
+  	  border-radius: 8px; 
+}
+#lblDangKy , #lblHistory{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+QLineEdit#editEmail, QLineEdit,#editFullName, #editSdt{
+    background-color: #374151; /* slate-700 */
+    color: white;
+    padding: 6px 10px;
+    border: 1px solid #4b5563; /* slate-600 */
+    border-radius: 6px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+QLabel#lblEmail, #lblSdt, #lblFullName{
+    color: #d1d5db; /* slate-300 */
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#btnSearch{
+background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+#btnThem {
+    background-color: #1B9CFC;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+#btnSua{
+    background-color: #f9ca24;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+} 
+#btnXoa{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+}
+ #btnXacNhanDangKy{
+    background-color: green; /* slate-700 */
+    color: white;
+    padding: 6px 10px;
+    border: 1px solid #4b5563; /* slate-600 */
+    border-radius: 6px;
+	font-size: 13px;
+	font-weight: bold;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblDangKy">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QUẢN LÝ NGƯỜI DÙNG</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>371</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblFullName">
+         <property name="text">
+          <string>HỌ TÊN</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="editFullName"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblEmail">
+         <property name="text">
+          <string>EMAIL</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="editEmail"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblSdt">
+         <property name="text">
+          <string>SỐ ĐIỆN THOẠI</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="editSdt"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="lblHistory">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>400</y>
+        <width>311</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LỊCH SỬ VÀO RA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>480</y>
+        <width>431</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string/>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>170</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>BIỂN SỐ </string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>170</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>THỜI GIAN VÀO</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>170</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>SỐ LƯỢT ĐẬU</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>170</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="btnXacNhanDangKy">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>310</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>XÁC NHẬN ĐĂNG KÝ</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSearch">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>100</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>TÌM KIẾM</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>160</y>
+        <width>61</width>
+        <height>124</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QPushButton" name="btnThem">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>THÊM</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSua">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>SỬA</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnXoa">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>XÓA</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1798</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

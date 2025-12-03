@@ -6,6 +6,9 @@ pip uninstall opencv-python
 pip install opencv-python==4.5.5.64
 pip install PyQt6 requests Pillow
 
+<!-- CHUYỂN TỪ AT DESIGNER SANG py -->
+pyuic6 -x camera.ui -o camera.py
+
 lay cai ảnh bỏ qua cái tề
 khi nịa m dùng hàm chi đó
 Vưt vô cái

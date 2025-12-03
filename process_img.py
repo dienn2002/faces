@@ -1,5 +1,4 @@
 import cv2
-import re
 import base64
 import os
 import sys
@@ -7,9 +6,9 @@ from scipy.spatial.distance import cosine
 import numpy as np
 from deepface import DeepFace
 
-
-
-# face_detector = MTCNN()
+# Load mô hình ArcFace 1 lần
+arcface_model = DeepFace.build_model("ArcFace")
+print("ArcFace model loaded!")
 
 def get_compare_face(face_ui_base64: str, face_db_base64: str):
 
@@ -28,13 +27,15 @@ def get_compare_face(face_ui_base64: str, face_db_base64: str):
         else:
             img2_processed = face_db_base64
 
-        print("START")
-    
         verification_result = DeepFace.verify(
             img1_path=img1_processed,
-            img2_path=img2_processed     # Chọn metric phù hợp với mô hình
+            img2_path=img2_processed,
+            # model_name="ArcFace",            # <-- Sử dụng ArcFace
+            model = arcface_model,
+            detector_backend="mtcnn",        # MTCNN độ chính xác cao
+            distance_metric="cosine"         # ArcFace phù hợp cosine
         )
-        
+
         verified = verification_result["verified"]
         distance = verification_result["distance"]
         
@@ -59,14 +60,30 @@ def file_to_base64(file_path: str) -> str:
         print(f"Lỗi khi xử lý file: {e}", file=sys.stderr)
         return ""
 
+
+def frame_to_base64(frame):
+    if frame is None:
+        return ""
+
+    ok, buf = cv2.imencode('.jpg', frame)
+    if not ok:
+        return ""
+
+    return base64.b64encode(buf).decode()
+
+
+
 def get_embedding(img_base64: str, model):
     if model is None: return None
         
     embeddings_list = DeepFace.represent(
         img_path=img_base64,
-        model=model,                 # <-- Truyền đối tượng mô hình đã load
+        # model=model,                 # <-- Truyền đối tượng mô hình đã load
+        model = arcface_model,
         enforce_detection=True,      # Bắt buộc phát hiện khuôn mặt
-        detector_backend="opencv",   # Detector nhanh và ổn định
+        # detector_backend="opencv",   # Detector nhanh và ổn định
+        detector_backend="mtcnn",
+        distance_metric="cosine",
         align=True
     )
     
@@ -74,14 +91,7 @@ def get_embedding(img_base64: str, model):
         return np.array(embeddings_list[0]["embedding"])
     return None
 
-
-
-
-
 # Load ảnh test
 img_ui = cv2.imread(r"D:\face\images\cs_Emily.jpg")
 with open(r"D:\face\images\emily2.jpg", "rb") as f:
     db_b64 = base64.b64encode(f.read()).decode("utf-8")
-
-# match, conf = get_compare_face(img_ui, db_b64)
-# print("Match:", match, "Confidence:", conf)
