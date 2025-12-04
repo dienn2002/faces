@@ -5,6 +5,7 @@ import numpy as np
 import base64
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtCore import QTimer, Qt
+from PyQt6.QtWidgets import QHeaderView
 from camera import Ui_MainWindow 
 from datetime import datetime
 
@@ -13,6 +14,8 @@ from process_img import get_compare_face, file_to_base64,frame_to_base64
 # biến toàn cục
 mode = "IN"
 plate_number=""
+user_mode = "ADD" 
+doi = False
 class MainApp(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -20,7 +23,12 @@ class MainApp(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.mode = "IN" 
         self.plate_number=""
+        self.doi = False
         self.ui.btnVao.setStyleSheet("background-color: green;")
+        self.ui.btnThem.setStyleSheet("background-color: green;")
+        self.ui.btnSua.setStyleSheet("background-color: red;")
+        self.ui.btnXoa.setStyleSheet("background-color: red;")
+        self.hide_check_buttons()
         # self.arcface_model = DeepFace.build_model("ArcFace")
 
         
@@ -55,7 +63,19 @@ class MainApp(QtWidgets.QMainWindow):
         self.ui.btnScan.clicked.connect(self.on_scan_clicked)
         self.ui.btnKiemTra.clicked.connect(self.handle_check)
         self.ui.btnConfirm.clicked.connect(self.verify_backup)
+        self.ui.btnThem.clicked.connect(self.change_user_mode_them)
+        self.ui.btnSua.clicked.connect(self.change_user_mode_sua)
+        self.ui.btnXoa.clicked.connect(self.change_user_mode_xoa)
+        self.ui.btnSearch.clicked.connect(self.handle_timkiem)
+        self.ui.btnXacNhanDangKy.clicked.connect(self.submit_form)
+        self.ui.checkBox.stateChanged.connect(self.handle_checkbox_change)
 
+    def handle_checkbox_change(self, state):
+        if state == Qt.CheckState.Checked:
+            self.doi = False
+        else:
+            self.doi = True
+    
     def set_mode_in(self):
         self.mode = "IN" 
         self.ui.btnVao.setStyleSheet("background-color: green;")
@@ -231,14 +251,52 @@ class MainApp(QtWidgets.QMainWindow):
             self.ui.lineEditCheck.setText(f"Lỗi kết nối server: {str(ex)}")
             print("Exception:", ex)
 
+    def change_user_mode_them(self):
+        global user_mode
+        user_mode = "ADD"
+        self.ui.btnThem.setStyleSheet("background-color: green;")
+        self.ui.btnSua.setStyleSheet("background-color: red;")
+        self.ui.btnXoa.setStyleSheet("background-color: red;")
+        self.hide_check_buttons()
+        self.clear_form()
 
-    def handle_Them(self):
+    def change_user_mode_sua(self):
+        global user_mode
+        user_mode = "EDIT"      
+        self.ui.btnThem.setStyleSheet("background-color: red;")
+        self.ui.btnSua.setStyleSheet("background-color: green;")
+        self.ui.btnXoa.setStyleSheet("background-color: red;")
+        self.show_check_buttons()
+        self.clear_form()
+        self.doi = False
+
+    def change_user_mode_xoa(self):
+        global user_mode
+        user_mode = "DELETE"
+        self.ui.btnThem.setStyleSheet("background-color: red;")
+        self.ui.btnSua.setStyleSheet("background-color: red;")
+        self.ui.btnXoa.setStyleSheet("background-color: green;")
+        self.hide_check_buttons()
+        self.clear_form()
+
+    def submit_form(self):
+        global user_mode
+        if user_mode == "ADD":
+            self.handle_them()
+        elif user_mode == "EDIT":
+            self.handle_sua()
+        elif user_mode == "DELETE":
+            self.handle_xoa()
+        else:
+            self.ui.lineEditCheck.setText("Chưa chọn chế độ thao tác người dùng")
+
+    def handle_them(self):
         full_name = self.ui.editFullName.text()
         email = self.ui.editEmail.text()
         phone_number = self.ui.editSdt.text()
         plate_image_b64 = frame_to_base64(self.frame_plate) if self.frame_plate is not None else None
         face_image_b64 = frame_to_base64(self.frame_face) if self.frame_face is not None else None
-        plate_number = self.ui.lineEditPlate_2.text()
+        plate_number = self.ui.plateNumber.text()
     
         inRequest = {
             "full_name": full_name,
@@ -249,7 +307,7 @@ class MainApp(QtWidgets.QMainWindow):
             "face_image": face_image_b64
         }
 
-        response = requests.post('http://localhost:8000/smart-gate/v1/access-control/add-user', json=inRequest)
+        response = requests.post('http://localhost:8000/smart-gate/v1/users/register', json=inRequest)
         response.raise_for_status()
         data = response.json()
 
@@ -258,15 +316,18 @@ class MainApp(QtWidgets.QMainWindow):
         else:
             self.ui.lineEditCheck.setText("Lỗi khi thêm người dùng")
 
-
-    def handle_Sua(self):
+    def handle_sua(self):
         # lấy dữ liệu từ form
-        plate_number = self.ui.lineEditPlate_2.text()
+        plate_number = self.ui.plateNumber.text()
         full_name = self.ui.editFullName.text()
         email = self.ui.editEmail.text()
         phone_number = self.ui.editSdt.text()
-        plate_image_b64 = frame_to_base64(self.frame_plate) if self.frame_plate is not None else None
-        face_image_b64 = frame_to_base64(self.frame_face) if self.frame_face is not None else None
+        if self.doi:
+            plate_image_b64 = frame_to_base64(self.frame_plate) 
+            face_image_b64 = frame_to_base64(self.frame_face)
+        else:
+            plate_image_b64 = None
+            face_image_b64 = None
 
         updateRequest = {
             "plate_number": plate_number,
@@ -277,13 +338,8 @@ class MainApp(QtWidgets.QMainWindow):
             "face_image": face_image_b64
         }
 
-        if plate_image_b64:
-            updateRequest["plate_image"] = plate_image_b64
-        if face_image_b64:
-            updateRequest["face_image"] = face_image_b64
-
         try:
-            response = requests.put('http://localhost:8000/smart-gate/v1/access-control/update-user', json=updateRequest)
+            response = requests.put('http://localhost:8000/smart-gate/v1/users/update', json=updateRequest)
             response.raise_for_status()
             data = response.json()
 
@@ -291,10 +347,10 @@ class MainApp(QtWidgets.QMainWindow):
                 self.ui.lineEditCheck.setText("Cập nhật người dùng thành công")
 
                 # hiển thị ảnh mới trên form
-                if plate_image_b64:
-                    self.update_image_from_base64(plate_image_b64, self.ui.lblPlateImage)
-                if face_image_b64:
-                    self.update_image_from_base64(face_image_b64, self.ui.lblFaceImage)
+                # if plate_image_b64:
+                #     self.update_image_from_base64(plate_image_b64, self.ui.lblPlateImage)
+                # if face_image_b64:
+                #     self.update_image_from_base64(face_image_b64, self.ui.lblFaceImage)
             else:
                 self.ui.lineEditCheck.setText("Cập nhật người dùng thất bại")
         except Exception as e:
@@ -302,10 +358,8 @@ class MainApp(QtWidgets.QMainWindow):
             self.ui.lineEditCheck.setText("Lỗi khi cập nhật người dùng")
             return
 
-
-
-    def hanle_Xoa(self):
-        plate_number = self.ui.lineEditPlate_2.text()  #dùng ô nhập biển số hiện có để xóa 
+    def handle_xoa(self):
+        plate_number = self.ui.plateNumber.text()  #dùng ô nhập biển số hiện có để xóa 
         if not plate_number:
             self.ui.lineEditCheck.setText("Vui lòng nhập biển số để xóa")
             return
@@ -320,7 +374,7 @@ class MainApp(QtWidgets.QMainWindow):
             return  # Người dùng hủy xóa
         
         try:
-            response = requests.delete('http://localhost:8000/smart-gate/v1/access-control/delete-user', json={"plate_number": plate_number})
+            response = requests.delete('http://localhost:8000/smart-gate/v1/users/delete', json={"plate_number": plate_number})
             response.raise_for_status()
             data = response.json()
 
@@ -339,17 +393,16 @@ class MainApp(QtWidgets.QMainWindow):
             print("Lỗi khi gọi API xóa người dùng:", e)
             self.ui.lineEditCheck.setText("Lỗi khi xóa người dùng")
             return
-
-
-    def hanlde_TimKiem(self):
-        plate_number = self.ui.lineEditPlate_2.text().strip()
+        
+    def handle_timkiem(self):
+        plate_number = self.ui.plateNumber.text().strip()
         if not plate_number:
             self.ui.lineEditCheck.setText("Vui lòng nhập biển số để tìm kiếm")
             return
         
         try:
             inRequest = {"plate_number": plate_number}
-            response = requests.post('http://localhost:8000/smart-gate/v1/access-control/search-user-history', json=inRequest)
+            response = requests.post('http://localhost:8000/smart-gate/v1/users/search', json=inRequest)
             response.raise_for_status()
             data = response.json()
 
@@ -381,14 +434,21 @@ class MainApp(QtWidgets.QMainWindow):
                 table = self.ui.tableWidget
                 table.setRowCount(len(history_list))
                 table.setColumnCount(4)
-                table.setHorizontalHeaderLabels(["ID", "BIỂN SỐ", "THỜI GIAN VÀO", "SỐ LƯỢT ĐẬU"])
+                table.setHorizontalHeaderLabels(["BIỂN SỐ", "THỜI GIAN", "LƯỢT", "TT"])
+                table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Fixed)
 
+                total_width = table.viewport().width()
+                table.setColumnWidth(0, int(total_width * 0.30)) # Biển số: 30%
+                table.setColumnWidth(1, int(total_width * 0.50)) # Thời gian: 50%
+                table.setColumnWidth(2, int(total_width * 0.10)) # Lượt: 10%
+                table.setColumnWidth(3, int(total_width * 0.10)) # TT: 10%
+              
                 for row_idx, h in enumerate(history_list):
-                    table.setItem(row_idx, 0, QtWidgets.QTableWidgetItem(str(h.get("id", ""))))
-                    table.setItem(row_idx, 1, QtWidgets.QTableWidgetItem(h.get("plate_number", "")))
-                    table.setItem(row_idx, 2, QtWidgets.QTableWidgetItem(h.get("timestamp", "")))
-                    table.setItem(row_idx, 3, QtWidgets.QTableWidgetItem(str(h.get("count", ""))))
-                table.resizeColumnsToContents()
+                    table.setItem(row_idx, 0, QtWidgets.QTableWidgetItem(h.get("plate_number", "")))
+                    table.setItem(row_idx, 1, QtWidgets.QTableWidgetItem(h.get("created_at", "")))
+                    table.setItem(row_idx, 2, QtWidgets.QTableWidgetItem(str(h.get("count", ""))))
+                    table.setItem(row_idx, 3, QtWidgets.QTableWidgetItem(h.get("status", "")))
+                # table.resizeColumnsToContents()
                 table.resizeRowsToContents()
 
                 self.ui.lineEditCheck.setText("Tìm kiếm thành công")
@@ -401,9 +461,8 @@ class MainApp(QtWidgets.QMainWindow):
                 self.ui.editSdt.clear()
                 self.ui.lblFaceImage.clear()
                 self.ui.lblPlateImage.clear()
-                self.ui.tableWidgetHistory.setRowCount(0)
         except Exception as ex:
-            self.ui.lineEditCheck.setText(f"Lỗi kết nối server: {str(ex)}")
+            self.ui.lineEditCheck.setText(f"Lỗi kết nối server")
             print("Exception:", ex)
 
 
@@ -476,6 +535,18 @@ class MainApp(QtWidgets.QMainWindow):
         
         self.ui.time.setText(time_str)
 
+    def clear_form(self):
+        self.ui.editFullName.clear()
+        self.ui.editEmail.clear()
+        self.ui.editSdt.clear()
+       
+    def hide_check_buttons(self):
+        self.ui.checkBox.hide()
+        self.ui.btnDoi.hide()
+
+    def show_check_buttons(self):
+        self.ui.checkBox.show()
+        self.ui.btnDoi.show()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

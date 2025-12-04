@@ -103,7 +103,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
        <x>730</x>
        <y>140</y>
        <width>311</width>
-       <height>601</height>
+       <height>651</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -206,7 +206,7 @@ QPushButton#btnRa:disabled {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>137</y>
+        <y>170</y>
         <width>281</width>
         <height>181</height>
        </rect>
@@ -279,7 +279,7 @@ QPushButton#btnRa:disabled {
         <x>10</x>
         <y>80</y>
         <width>281</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="alignment">
@@ -319,7 +319,7 @@ QPushButton#btnRa:disabled {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>480</y>
+        <y>560</y>
         <width>281</width>
         <height>58</height>
        </rect>
@@ -345,7 +345,7 @@ QPushButton#btnRa:disabled {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>400</y>
+        <y>480</y>
         <width>281</width>
         <height>51</height>
        </rect>
@@ -355,7 +355,7 @@ QPushButton#btnRa:disabled {
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>330</y>
+        <y>380</y>
         <width>93</width>
         <height>51</height>
        </rect>
@@ -368,7 +368,7 @@ QPushButton#btnRa:disabled {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>330</y>
+        <y>380</y>
         <width>181</width>
         <height>51</height>
        </rect>
@@ -384,7 +384,7 @@ QPushButton#btnRa:disabled {
        <x>0</x>
        <y>140</y>
        <width>721</width>
-       <height>601</height>
+       <height>651</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -432,8 +432,8 @@ QPushButton#btnScan:disabled {
        <rect>
         <x>0</x>
         <y>60</y>
-        <width>721</width>
-        <height>436</height>
+        <width>711</width>
+        <height>491</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -457,7 +457,7 @@ QPushButton#btnScan:disabled {
          <x>0</x>
          <y>10</y>
          <width>351</width>
-         <height>451</height>
+         <height>531</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -471,7 +471,7 @@ QPushButton#btnScan:disabled {
 
 }
 #lblFaceImage {
-	margin: 25px;
+
 	display: flex;
     justify-content: center;   /* Căn giữa ngang */
     align-items: center;    
@@ -504,13 +504,13 @@ QPushButton#btnScan:disabled {
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>13</y>
           <width>342</width>
-          <height>391</height>
+          <height>461</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
@@ -586,10 +586,10 @@ QPushButton#btnScan:disabled {
       <widget class="QFrame" name="FramePlate">
        <property name="geometry">
         <rect>
-         <x>369</x>
+         <x>359</x>
          <y>12</y>
-         <width>350</width>
-         <height>451</height>
+         <width>351</width>
+         <height>471</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -622,7 +622,7 @@ QPushButton#btnScan:disabled {
 	padding: 5px;
 }
 #lblPlateImage{
-	margin: 25px;
+
 display: flex;
     justify-content: center;   /* Căn giữa ngang */
     align-items: center;    
@@ -657,13 +657,13 @@ QPushButton#btnScanPlate:disabled {
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>11</y>
           <width>342</width>
-          <height>388</height>
+          <height>461</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -744,7 +744,7 @@ QPushButton#btnScanPlate:disabled {
       <property name="geometry">
        <rect>
         <x>270</x>
-        <y>540</y>
+        <y>600</y>
         <width>81</width>
         <height>41</height>
        </rect>
@@ -781,7 +781,7 @@ btnScan:disabled
       <property name="geometry">
        <rect>
         <x>390</x>
-        <y>540</y>
+        <y>600</y>
         <width>91</width>
         <height>41</height>
        </rect>
@@ -819,10 +819,16 @@ btnScan:disabled
      <property name="geometry">
       <rect>
        <x>1050</x>
-       <y>40</y>
+       <y>10</y>
        <width>471</width>
        <height>791</height>
       </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame#DangKy{
@@ -853,7 +859,7 @@ QLabel#lblEmail, #lblSdt, #lblFullName{
     font-size: 13px;
 }
 
-#btnSearch{
+#btnSearch, #btnXemLichSu{
 background-color: #1B9CFC;
     color: white;
     font-weight: bold;
@@ -903,7 +909,7 @@ background-color: #1B9CFC;
      <widget class="QLabel" name="lblDangKy">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>78</x>
         <y>20</y>
         <width>311</width>
         <height>31</height>
@@ -921,8 +927,8 @@ background-color: #1B9CFC;
        <rect>
         <x>10</x>
         <y>160</y>
-        <width>371</width>
-        <height>121</height>
+        <width>301</width>
+        <height>131</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_3">
@@ -934,7 +940,20 @@ background-color: #1B9CFC;
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="editFullName"/>
+        <widget class="QLineEdit" name="editFullName">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>35</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="lblEmail">
@@ -944,25 +963,51 @@ background-color: #1B9CFC;
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="editEmail"/>
+        <widget class="QLineEdit" name="editEmail">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>34</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>35</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="lblSdt">
          <property name="text">
-          <string>SỐ ĐIỆN THOẠI</string>
+          <string>SĐT</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="editSdt"/>
+        <widget class="QLineEdit" name="editSdt">
+         <property name="minimumSize">
+          <size>
+           <width>240</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>35</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
      <widget class="QLabel" name="lblHistory">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>400</y>
+        <x>74</x>
+        <y>413</y>
         <width>311</width>
         <height>61</height>
        </rect>
@@ -978,7 +1023,7 @@ background-color: #1B9CFC;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>480</y>
+        <y>479</y>
         <width>431</width>
         <height>271</height>
        </rect>
@@ -1150,9 +1195,9 @@ background-color: #1B9CFC;
      <widget class="QPushButton" name="btnXacNhanDangKy">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>310</y>
-        <width>161</width>
+        <x>200</x>
+        <y>354</y>
+        <width>100</width>
         <height>41</height>
        </rect>
       </property>
@@ -1160,17 +1205,29 @@ background-color: #1B9CFC;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>XÁC NHẬN ĐĂNG KÝ</string>
+       <string>XÁC NHẬN</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btnSearch">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>100</y>
-        <width>121</width>
-        <height>41</height>
+        <x>353</x>
+        <y>110</y>
+        <width>100</width>
+        <height>35</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>35</height>
+       </size>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1182,15 +1239,27 @@ background-color: #1B9CFC;
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>160</y>
-        <width>61</width>
+        <x>352</x>
+        <y>158</y>
+        <width>102</width>
         <height>124</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <widget class="QPushButton" name="btnThem">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -1201,6 +1270,18 @@ background-color: #1B9CFC;
        </item>
        <item>
         <widget class="QPushButton" name="btnSua">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -1211,6 +1292,18 @@ background-color: #1B9CFC;
        </item>
        <item>
         <widget class="QPushButton" name="btnXoa">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>35</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -1220,6 +1313,69 @@ background-color: #1B9CFC;
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLineEdit" name="plateNumber">
+      <property name="geometry">
+       <rect>
+        <x>62</x>
+        <y>110</y>
+        <width>240</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDoi">
+      <property name="geometry">
+       <rect>
+        <x>63</x>
+        <y>288</y>
+        <width>240</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>THAY ĐỔI NGƯỜI ĐĂNG KÝ</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>289</y>
+        <width>35</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
     </widget>
    </widget>

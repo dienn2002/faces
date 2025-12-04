@@ -6,10 +6,6 @@ from scipy.spatial.distance import cosine
 import numpy as np
 from deepface import DeepFace
 
-# Load mô hình ArcFace 1 lần
-arcface_model = DeepFace.build_model("ArcFace")
-print("ArcFace model loaded!")
-
 def get_compare_face(face_ui_base64: str, face_db_base64: str):
 
     try:
@@ -30,10 +26,11 @@ def get_compare_face(face_ui_base64: str, face_db_base64: str):
         verification_result = DeepFace.verify(
             img1_path=img1_processed,
             img2_path=img2_processed,
-            # model_name="ArcFace",            # <-- Sử dụng ArcFace
-            model = arcface_model,
-            detector_backend="mtcnn",        # MTCNN độ chính xác cao
-            distance_metric="cosine"         # ArcFace phù hợp cosine
+            model_name="ArcFace",         
+            # model = arcface_model,
+            detector_backend="mtcnn",       
+            distance_metric="cosine",
+            align=True   
         )
 
         verified = verification_result["verified"]
@@ -73,23 +70,6 @@ def frame_to_base64(frame):
 
 
 
-def get_embedding(img_base64: str, model):
-    if model is None: return None
-        
-    embeddings_list = DeepFace.represent(
-        img_path=img_base64,
-        # model=model,                 # <-- Truyền đối tượng mô hình đã load
-        model = arcface_model,
-        enforce_detection=True,      # Bắt buộc phát hiện khuôn mặt
-        # detector_backend="opencv",   # Detector nhanh và ổn định
-        detector_backend="mtcnn",
-        distance_metric="cosine",
-        align=True
-    )
-    
-    if embeddings_list:
-        return np.array(embeddings_list[0]["embedding"])
-    return None
 
 # Load ảnh test
 img_ui = cv2.imread(r"D:\face\images\cs_Emily.jpg")
