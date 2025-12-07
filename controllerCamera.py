@@ -75,6 +75,7 @@ class MainApp(QtWidgets.QMainWindow):
             self.doi = False
         else:
             self.doi = True
+        print("CHECKBOX STATE → self.doi =", self.doi)
     
     def set_mode_in(self):
         self.mode = "IN" 
@@ -313,6 +314,12 @@ class MainApp(QtWidgets.QMainWindow):
 
         if data["is_success"]:
             self.ui.lineEditCheck.setText("Thêm người dùng thành công")
+            self.ui.editFullName.clear()
+            self.ui.editEmail.clear()
+            self.ui.editSdt.clear()
+            self.ui.lineEditPlate_2.clear()
+            self.ui.lblPlateImage.clear()
+            self.ui.lblFaceImage.clear()
         else:
             self.ui.lineEditCheck.setText("Lỗi khi thêm người dùng")
 
@@ -322,6 +329,7 @@ class MainApp(QtWidgets.QMainWindow):
         full_name = self.ui.editFullName.text()
         email = self.ui.editEmail.text()
         phone_number = self.ui.editSdt.text()
+        print("Khi nhấn SỬA → self.doi =", self.doi)
         if self.doi:
             plate_image_b64 = frame_to_base64(self.frame_plate) 
             face_image_b64 = frame_to_base64(self.frame_face)
@@ -345,7 +353,12 @@ class MainApp(QtWidgets.QMainWindow):
 
             if data["is_success"]:
                 self.ui.lineEditCheck.setText("Cập nhật người dùng thành công")
-
+                self.ui.editFullName.clear()
+                self.ui.editEmail.clear()
+                self.ui.editSdt.clear()
+                self.ui.lineEditPlate_2.clear()
+                self.ui.lblPlateImage.clear()
+                self.ui.lblFaceImage.clear()
                 # hiển thị ảnh mới trên form
                 # if plate_image_b64:
                 #     self.update_image_from_base64(plate_image_b64, self.ui.lblPlateImage)
@@ -372,7 +385,12 @@ class MainApp(QtWidgets.QMainWindow):
 
         if reply != QtWidgets.QMessageBox.StandardButton.Yes:
             return  # Người dùng hủy xóa
-        
+        self.ui.editFullName.clear()
+        self.ui.editEmail.clear()
+        self.ui.editSdt.clear()
+        self.ui.lineEditPlate_2.clear()
+        self.ui.lblPlateImage.clear()
+        self.ui.lblFaceImage.clear()
         try:
             response = requests.delete('http://localhost:8000/smart-gate/v1/users/delete', json={"plate_number": plate_number})
             response.raise_for_status()
@@ -381,12 +399,12 @@ class MainApp(QtWidgets.QMainWindow):
             if data["is_success"]:
                 self.ui.lineEditCheck.setText(f"Xóa người dùng có biển số xe {plate_number} thành công")
 
-                self.ui.editFullName.clear()
-                self.ui.editEmail.clear()
-                self.ui.editSdt.clear()
-                self.ui.lineEditPlate_2.clear()
-                self.ui.lblPlateImage.clear()
-                self.ui.lblFaceImage.clear()
+                # self.ui.editFullName.clear()
+                # self.ui.editEmail.clear()
+                # self.ui.editSdt.clear()
+                # self.ui.lineEditPlate_2.clear()
+                # self.ui.lblPlateImage.clear()
+                # self.ui.lblFaceImage.clear()
             else:
                 self.ui.lineEditCheck.setText("Xóa người dùng thất bại")
         except Exception as e:
