@@ -859,7 +859,8 @@ QLabel#lblEmail, #lblSdt, #lblFullName{
     font-size: 13px;
 }
 
-#btnSearch, #btnXemLichSu{
+
+#btnSearch{
 background-color: #1B9CFC;
     color: white;
     font-weight: bold;
@@ -898,7 +899,15 @@ background-color: #1B9CFC;
 	font-size: 13px;
 	font-weight: bold;
 }
-</string>
+#btnXemLichSu{
+    background-color: #0984e3; 
+    color: white;
+    padding: 6px 10px;
+    border: 1px solid #4b5563; /* slate-600 */
+    border-radius: 6px;
+	font-size: 13px;
+	font-weight: bold;
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -1006,8 +1015,8 @@ background-color: #1B9CFC;
      <widget class="QLabel" name="lblHistory">
       <property name="geometry">
        <rect>
-        <x>74</x>
-        <y>413</y>
+        <x>40</x>
+        <y>370</y>
         <width>311</width>
         <height>61</height>
        </rect>
@@ -1023,7 +1032,7 @@ background-color: #1B9CFC;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>479</y>
+        <y>430</y>
         <width>431</width>
         <height>261</height>
        </rect>
@@ -1141,7 +1150,7 @@ background-color: #1B9CFC;
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>354</y>
+        <y>330</y>
         <width>100</width>
         <height>41</height>
        </rect>
@@ -1320,6 +1329,22 @@ background-color: #1B9CFC;
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnXemLichSu">
+      <property name="geometry">
+       <rect>
+        <x>179</x>
+        <y>700</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>XEM LỊCH SỬ</string>
       </property>
      </widget>
     </widget>

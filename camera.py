@@ -530,7 +530,8 @@ class Ui_MainWindow(object):
 "    font-size: 13px;\n"
 "}\n"
 "\n"
-"#btnSearch, #btnXemLichSu{\n"
+"\n"
+"#btnSearch{\n"
 "background-color: #1B9CFC;\n"
 "    color: white;\n"
 "    font-weight: bold;\n"
@@ -569,7 +570,15 @@ class Ui_MainWindow(object):
 "    font-size: 13px;\n"
 "    font-weight: bold;\n"
 "}\n"
-"")
+"#btnXemLichSu{\n"
+"    background-color: #0984e3; \n"
+"    color: white;\n"
+"    padding: 6px 10px;\n"
+"    border: 1px solid #4b5563; /* slate-600 */\n"
+"    border-radius: 6px;\n"
+"    font-size: 13px;\n"
+"    font-weight: bold;\n"
+"}")
         self.DangKy.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.DangKy.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.DangKy.setObjectName("DangKy")
@@ -608,11 +617,11 @@ class Ui_MainWindow(object):
         self.editSdt.setObjectName("editSdt")
         self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.editSdt)
         self.lblHistory = QtWidgets.QLabel(parent=self.DangKy)
-        self.lblHistory.setGeometry(QtCore.QRect(74, 413, 311, 61))
+        self.lblHistory.setGeometry(QtCore.QRect(40, 370, 311, 61))
         self.lblHistory.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lblHistory.setObjectName("lblHistory")
         self.tableWidget = QtWidgets.QTableWidget(parent=self.DangKy)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 479, 431, 261))
+        self.tableWidget.setGeometry(QtCore.QRect(20, 430, 431, 261))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(4)
         self.tableWidget.setRowCount(0)
@@ -657,7 +666,7 @@ class Ui_MainWindow(object):
         item.setForeground(brush)
         self.tableWidget.setHorizontalHeaderItem(3, item)
         self.btnXacNhanDangKy = QtWidgets.QPushButton(parent=self.DangKy)
-        self.btnXacNhanDangKy.setGeometry(QtCore.QRect(200, 354, 100, 41))
+        self.btnXacNhanDangKy.setGeometry(QtCore.QRect(200, 330, 100, 41))
         self.btnXacNhanDangKy.setStyleSheet("")
         self.btnXacNhanDangKy.setObjectName("btnXacNhanDangKy")
         self.btnSearch = QtWidgets.QPushButton(parent=self.DangKy)
@@ -705,6 +714,10 @@ class Ui_MainWindow(object):
         self.checkBox.setMaximumSize(QtCore.QSize(35, 35))
         self.checkBox.setText("")
         self.checkBox.setObjectName("checkBox")
+        self.btnXemLichSu = QtWidgets.QPushButton(parent=self.DangKy)
+        self.btnXemLichSu.setGeometry(QtCore.QRect(179, 700, 111, 41))
+        self.btnXemLichSu.setStyleSheet("")
+        self.btnXemLichSu.setObjectName("btnXemLichSu")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1798, 26))
@@ -753,6 +766,7 @@ class Ui_MainWindow(object):
         self.btnSua.setText(_translate("MainWindow", "SỬA"))
         self.btnXoa.setText(_translate("MainWindow", "XÓA"))
         self.btnDoi.setText(_translate("MainWindow", "THAY ĐỔI NGƯỜI ĐĂNG KÝ"))
+        self.btnXemLichSu.setText(_translate("MainWindow", "XEM LỊCH SỬ"))
 
 
 if __name__ == "__main__":
